@@ -32,7 +32,9 @@
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ name, email, message }),
 			})
-				.then(() => {
+				.then((res) => res.json())
+				.then((res) => {
+					console.log(res);
 					sending = false;
 					sendFeedback = "Message sent";
 					name = "";
@@ -87,6 +89,7 @@
 			{sending ? "Sending" : "Send"}
 		</button>
 		{#if errors.send}<span class="error">{errors.send}</span>{/if}
+		{#if sendFeedback}<span class="success">{sendFeedback}</span>{/if}
 	</div>
 </section>
 
@@ -141,6 +144,10 @@
 
 	.error {
 		color: red;
+	}
+
+	.success {
+		color: var(--green-accent);
 	}
 
 	label {
