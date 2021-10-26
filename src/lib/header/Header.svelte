@@ -18,10 +18,6 @@
 			url: "#projects",
 		},
 		{
-			title: "Blog",
-			url: "#blog",
-		},
-		{
 			title: "Contact",
 			url: "#contact",
 		},

@@ -2,7 +2,7 @@
 	import image from "./profile.jpeg";
 	import iconTwitter from "./icon-twitter.png";
 	import iconEmail from "./icon-email.png";
-	import iconGithub from "./icon-github.png";
+	import iconGithub from "../icon-github.png";
 	import iconLinkedin from "./icon-linkedin.png";
 	import Boop from "../Boop.svelte";
 </script>

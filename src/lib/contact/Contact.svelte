@@ -151,4 +151,11 @@
 	label {
 		display: inline;
 	}
+
+	@media (max-width: 768px) {
+		section {
+			padding: 64px 20px;
+			flex-direction: column;
+		}
+	}
 </style>
