@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap");
+
+:root {
+	--base: #000;
+	--level-1: #181823;
+	--light-grey: #8491a0;
+	--dark-grey: #5b6876;
+	--text: #fff;
+	--primary: #5221e6;
+	--green-accent: #3cc74e;
+	--pink-accent: #e95d90;
+	--peach-accent: #fff3e4;
+	--violet-accent: #fbe4ff;
+	--blue-accent: #609bff;
+}
+
+html,
+body {
+	font-family: "Sen", sans-serif;
+	background-color: var(--base);
+	color: var(--text);
+	max-width: 1920px;
+	margin: 0 auto;
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+.text-label-1 {
+	font-weight: 400;
+	font-size: 117px;
+}
+
+.text-heading-1 {
+	font-weight: 700;
+	font-size: 76px;
+	line-height: 91px;
+}
+
+@media (max-width: 1280px) {
+	.text-heading-1 {
+		font-size: 44px;
+		line-height: 56px;
+	}
+}
+
+.text-heading-2 {
+	font-weight: 700;
+	font-size: 55px;
+}
+
+.text-heading-3 {
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.text-heading-4 {
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.text-heading-5 {
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.text-body-1 {
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.text-body-2 {
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.text-overline {
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.text-button {
+	font-weight: 700;
+	font-size: 18px;
+}
+
+@media (max-width: 768px) {
+	.text-heading-1 {
+		font-size: 32px;
+		line-height: 40px;
+	}
+
+	.text-heading-2 {
+		font-size: 32px;
+		line-height: 40px;
+	}
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+	outline: 3px solid var(--pink-accent);
+	outline-offset: 3px;
+	border-radius: 5px;
+}
