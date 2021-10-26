@@ -32,9 +32,7 @@
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ name, email, message }),
 			})
-				.then((res) => res.json())
-				.then((res) => {
-					console.log(res);
+				.then(() => {
 					sending = false;
 					sendFeedback = "Message sent";
 					name = "";
