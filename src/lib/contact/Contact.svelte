@@ -41,6 +41,7 @@
 				})
 				.catch((err) => {
 					console.error(err);
+					sending = false;
 					errors.send =
 						"There was an error sending your message. Please try again later.";
 				});

@@ -1,4 +1,4 @@
-import sgMail from "@sendgrid/mail";
+const sgMail = require("@sendgrid/mail");
 
 exports.handler = function (event, context, callback) {
 	const { name, email, message } = JSON.parse(event.body);
