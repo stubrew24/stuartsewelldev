@@ -34,7 +34,7 @@
 			})
 				.then(() => {
 					sending = false;
-					sendFeedback = "Message sent";
+					sendFeedback = "Message has been sent. I'll be in touch soon!";
 					name = "";
 					email = "";
 					message = "";
