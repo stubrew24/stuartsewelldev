@@ -74,8 +74,8 @@
 
 	.screenshot {
 		object-fit: cover;
-		width: 640px;
-		height: 620px;
+		width: 100%;
+		aspect-ratio: 640 / 620;
 	}
 
 	@media (max-width: 768px) {
