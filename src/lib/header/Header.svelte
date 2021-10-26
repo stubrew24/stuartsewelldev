@@ -86,6 +86,11 @@
 		color: var(--text);
 	}
 
+	header a:hover {
+		text-decoration: underline;
+		color: var(--violet-accent);
+	}
+
 	.title {
 		color: var(--light-grey);
 		padding: 32px 0;

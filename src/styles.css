@@ -6,9 +6,9 @@
 	--light-grey: #8491a0;
 	--dark-grey: #5b6876;
 	--text: #fff;
-	--primary: #5221e6;
+	--primary: #f00b95;
 	--green-accent: #3cc74e;
-	--pink-accent: #e95d90;
+	--purple-accent: #5221e6;
 	--peach-accent: #fff3e4;
 	--violet-accent: #fbe4ff;
 	--blue-accent: #609bff;
@@ -104,7 +104,11 @@ a:focus,
 input:focus,
 textarea:focus,
 button:focus {
-	outline: 3px solid var(--pink-accent);
+	outline: 3px solid var(--purple-accent);
 	outline-offset: 3px;
 	border-radius: 5px;
+}
+
+a:hover {
+	text-decoration: underline;
 }

@@ -91,7 +91,7 @@
 		color: var(--blue-accent);
 	}
 	article:nth-child(3) .company {
-		color: var(--pink-accent);
+		color: var(--purple-accent);
 	}
 
 	@media (max-width: 1024px) {

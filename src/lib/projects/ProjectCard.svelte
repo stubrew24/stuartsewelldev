@@ -2,6 +2,7 @@
 	import iconGithub from "../icon-github.png";
 	import iconWeb from "./icon-web.png";
 	import iconPlay from "./icon-play.png";
+	import Boop from "$lib/Boop.svelte";
 
 	export let image;
 	export let title;
@@ -19,20 +20,31 @@
 				<h3 class="text-heading-3">{title}</h3>
 				<div class="links">
 					{#if link}<a href={link} target="_blank">
-							<img src={iconWeb} alt="Internet icon" width="32" height="32" />
+							<Boop rotation={20} timing={200}>
+								<img src={iconWeb} alt="Internet icon" width="32" height="32" />
+							</Boop>
 						</a>
 					{/if}
 					{#if github}<a href={github} target="_blank">
-							<img src={iconGithub} alt="Github icon" width="32" height="32" />
+							<Boop rotation={20} timing={200}>
+								<img
+									src={iconGithub}
+									alt="Github icon"
+									width="32"
+									height="32"
+								/>
+							</Boop>
 						</a>
 					{/if}
 					{#if play}<a href={play} target="_blank">
-							<img
-								src={iconPlay}
-								alt="Google Play Store icon"
-								width="32"
-								height="32"
-							/>
+							<Boop rotation={20} timing={200}>
+								<img
+									src={iconPlay}
+									alt="Google Play Store icon"
+									width="32"
+									height="32"
+								/>
+							</Boop>
 						</a>
 					{/if}
 				</div>
