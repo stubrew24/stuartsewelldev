@@ -1,13 +1,13 @@
 import sgMail from "@sendgrid/mail";
 
 exports.handler = function (event, context, callback) {
-	const { name, email, message, subject } = JSON.parse(event.body);
+	const { name, email, message } = JSON.parse(event.body);
 
 	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 	const msg = {
 		to: "hello@stuartsewell.dev",
 		from: email,
-		subject,
+		subject: "New message from stuartsewell.dev",
 		text: `${name} says: ${message}`,
 	};
 

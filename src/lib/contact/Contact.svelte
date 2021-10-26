@@ -5,20 +5,45 @@
 
 	let errors = {};
 
+	let sending = false;
+	let sendFeedback = "";
+
 	function sendMessage() {
+		errors = {};
+		sending = true;
 		if (name == "") {
 			errors.name = "Name is required";
 		}
-		if (email == "") {
-			errors.email = "Email is required";
+		if (name.length < 3) {
+			errors.name = "Name must be at least 3 characters";
+		}
+		if (
+			email == "" ||
+			/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) == false
+		) {
+			errors.email = "Valid email is required";
 		}
 		if (message == "") {
 			errors.message = "Message is required";
 		}
 		if (Object.keys(errors).length === 0) {
-			alert("Message sent!");
-		} else {
-			alert("erros");
+			fetch("https://stuartsewell.dev/.netlify/functions/mailer", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email, message }),
+			})
+				.then(() => {
+					sending = false;
+					sendFeedback = "Message sent";
+					name = "";
+					email = "";
+					message = "";
+				})
+				.catch((err) => {
+					console.error(err);
+					errors.send =
+						"There was an error sending your message. Please try again later.";
+				});
 		}
 	}
 </script>
@@ -37,10 +62,12 @@
 		<div class="form-input">
 			<label for="name">Name</label>
 			<input type="text" id="name" bind:value={name} />
+			{#if errors.name}<span class="error">{errors.name}</span>{/if}
 		</div>
 		<div class="form-input">
 			<label for="email">Email</label>
 			<input type="email" id="email" bind:value={email} />
+			{#if errors.email}<span class="error">{errors.email}</span>{/if}
 		</div>
 
 		<div class="form-input">
@@ -52,9 +79,13 @@
 				rows="5"
 				bind:value={message}
 			/>
+			{#if errors.message}<span class="error">{errors.message}</span>{/if}
 		</div>
 
-		<button class="text-button" on:click={sendMessage}>Send</button>
+		<button class="text-button" on:click={sendMessage} disabled={sending}>
+			{sending ? "Sending" : "Send"}
+		</button>
+		{#if errors.send}<span class="error">{errors.send}</span>{/if}
 	</div>
 </section>
 
@@ -105,5 +136,13 @@
 	a {
 		text-decoration: none;
 		color: var(--blue-accent);
+	}
+
+	.error {
+		color: red;
+	}
+
+	label {
+		display: inline;
 	}
 </style>
