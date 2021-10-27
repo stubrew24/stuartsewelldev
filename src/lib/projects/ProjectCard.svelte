@@ -19,13 +19,13 @@
 			<div class="heading">
 				<h3 class="text-heading-3">{title}</h3>
 				<div class="links">
-					{#if link}<a href={link} target="_blank">
+					{#if link}<a href={link} target="_blank" rel="noopener">
 							<Boop rotation={20} timing={200}>
 								<img src={iconWeb} alt="Internet icon" width="32" height="32" />
 							</Boop>
 						</a>
 					{/if}
-					{#if github}<a href={github} target="_blank">
+					{#if github}<a href={github} target="_blank" rel="noopener">
 							<Boop rotation={20} timing={200}>
 								<img
 									src={iconGithub}
@@ -36,7 +36,7 @@
 							</Boop>
 						</a>
 					{/if}
-					{#if play}<a href={play} target="_blank">
+					{#if play}<a href={play} target="_blank" rel="noopener">
 							<Boop rotation={20} timing={200}>
 								<img
 									src={iconPlay}
