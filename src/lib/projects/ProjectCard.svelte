@@ -7,9 +7,9 @@
 	export let image;
 	export let title;
 	export let description;
-	export let link;
-	export let github;
-	export let play;
+	export let link = null;
+	export let github = null;
+	export let play = null;
 </script>
 
 <article>

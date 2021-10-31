@@ -152,6 +152,11 @@
 		display: inline;
 	}
 
+	@media (max-width: 1280px) {
+		section {
+			padding: 64px 72px;
+		}
+	}
 	@media (max-width: 768px) {
 		section {
 			padding: 64px 20px;

@@ -3,10 +3,11 @@
 </script>
 
 <script>
-	import Contact from "$lib/contact/Contact.svelte";
-	import Experience from "$lib/experience/Experience.svelte";
 	import Hero from "$lib/hero/Hero.svelte";
+	import Experience from "$lib/experience/Experience.svelte";
 	import Projects from "$lib/projects/Projects.svelte";
+	// import Blog from "$lib/blog/Blog.svelte";
+	import Contact from "$lib/contact/Contact.svelte";
 </script>
 
 <svelte:head>
@@ -17,8 +18,6 @@
 	<Hero />
 	<Experience />
 	<Projects />
+	<!-- <Blog /> -->
 	<Contact />
 </section>
-
-<style>
-</style>

@@ -61,14 +61,13 @@
 
 	.experience-container {
 		display: flex;
-		gap: 24px;
+		gap: 48px;
 	}
 
 	.position {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding-right: 42px;
 		gap: 16px;
 	}
 
@@ -102,11 +101,7 @@
 			font-size: 96px;
 		}
 		.experience-container {
-			gap: 10px;
-		}
-
-		.position {
-			padding-right: 20px;
+			gap: 24px;
 		}
 
 		h2 {
