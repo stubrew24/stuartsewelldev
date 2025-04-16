@@ -12,19 +12,15 @@
 	<img src={image} alt="Stuart Sewell headshot" />
 	<div class="text-block">
 		<h1 class="text-heading-1">
-			Hello <Boop rotation={20} timing={200}>👋</Boop> I’m Stuart Sewell. A software
+			Hello <Boop rotation={20} timing={200}>👋</Boop> I'm Stuart Sewell. A software
 			engineer.
 		</h1>
 		<p class="text-body-1">
-			I am a full stack developer primarily focused on the JavaScript stack
-			including React, Node.js and TypeScript.
+			I am a frontend focused engineer with a passion for building accessible,
+			performant and responsive websites. I am currently working as a frontend
+			engineer at <a href="https://www.preoptima.com/" class="text-link">Preoptima</a>.
 		</p>
 		<div class="socials">
-			<a href="https://twitter.com/stubrew24" target="_blank" rel="noopener">
-				<Boop rotation={20} timing={200}>
-					<img height="48" width="48" src={iconTwitter} alt="Twitter icon" />
-				</Boop>
-			</a>
 			<a href="mailto:hello@stuartsewell.dev">
 				<Boop rotation={20} timing={200}>
 					<img height="48" width="48" src={iconEmail} alt="Email icon" />
@@ -36,7 +32,7 @@
 				</Boop>
 			</a>
 			<a
-				href="https://www.linkedin.com/in/stubrew24/"
+				href="https://www.linkedin.com/in/stuart-sewell/"
 				target="_blank"
 				rel="noopener"
 			>
@@ -62,6 +58,10 @@
 		aspect-ratio: 1/0.85;
 		object-fit: cover;
 		z-index: 10;
+	}
+
+	.text-link {
+		color: white
 	}
 
 	.text-block {
