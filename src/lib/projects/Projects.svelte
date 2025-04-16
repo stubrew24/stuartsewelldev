@@ -1,9 +1,8 @@
 <script>
 	import ProjectCard from "./ProjectCard.svelte";
-	import brewersmarket from "./brewersmarket.jpeg";
 	import cafe53 from "./cafe53.jpeg";
 	import hangman from "./hangman.jpeg";
-	import twentyfortyeight from "./twentyfortyeight.jpeg";
+	import junomidwives from "./junomidwives.jpg";
 
 	const projectsCol1 = [
 		{
@@ -11,18 +10,17 @@
 			title: "Cafe 53",
 			description:
 				"Homepage for an independent restaurant in Latvia. Full CMS features, hosted on Firebase and using Google Cloud Translation API to translate between English, Latvian and Russian.",
-			link: "https://cafe53.lv/",
-		},
-		{
-			image: brewersmarket,
-			title: "Brewers Market",
-			description:
-				"Final project at Flatiron School. A marketplace for direct beer sales from brewery to consumer with social media features allowing consumers to follow their favourite breweries. Payment handling built with Node.js and Stripe.",
-			link: "https://brewersmarket.stuartsewell.dev/",
-			github: "https://github.com/stubrew24/brewers-market",
 		},
 	];
 	const projectsCol2 = [
+		{
+			image: junomidwives,
+			title: "Juno Midwives",
+			description:
+				"Juno Midwives asked me to rebuild their website with a focus on improving the design and making it easy for them to make changes to the content themselves. I used Nuxt and Vuetify for the frontend and Sanity.io for the CMS.",
+			link: "https://test.junomidwives.co.uk",
+			github: "https://github.com/junomidwives/frontend",
+		},
 		{
 			image: hangman,
 			title: "Hangman",
@@ -31,14 +29,6 @@
 			link: "https://hangman.stuartsewell.dev/",
 			github: "https://github.com/stubrew24/hangman",
 			play: "https://play.google.com/store/apps/details?id=com.stuartsewell.hangman&hl=en",
-		},
-		{
-			image: twentyfortyeight,
-			title: "Twenty Forty Eight",
-			description:
-				"Recreation of the 2048 game, created during my time at flatiron school.",
-			link: "https://twentyfortyeight.stuartsewell.dev/",
-			github: "https://github.com/stubrew24/twentyfortyeight",
 		},
 	];
 </script>
