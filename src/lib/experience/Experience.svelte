@@ -1,7 +1,16 @@
 <script>
 	let positions = [
 		{
+			startDate: "2023",
+			endDate: "Present",
+			company: "Preoptima",
+			title: "Frontend Engineer",
+			overview:
+				"Enhancing design and user experience while refactoring legacy code. Imlementing a unit and integration testing framework along with CI/CD workflows. Leading the frontend development of a new product in collaboration with Westminster City Council.",
+		},
+		{
 			startDate: "2020",
+			endDate: "2023",
 			company: "Nurole",
 			title: "Full Stack Developer",
 			overview:
@@ -9,17 +18,11 @@
 		},
 		{
 			startDate: "2019",
+			endDate: "2020",
 			company: "WeWork",
 			title: "Software Engineering Coach",
 			overview:
 				"Teaching the Flatiron School core curriculum of Ruby, JavaScript & React, clarifying concepts to students and debugging code.",
-		},
-		{
-			startDate: "2016",
-			company: "UBREW",
-			title: "Brewer / Web Developer",
-			overview:
-				"Lead on building and deploying various web apps to assist with day-to-day operations including a store for selling brewing products and a booking system for brewery events.",
 		},
 	];
 </script>
@@ -30,8 +33,13 @@
 	<div class="experience-container">
 		{#each positions as position}
 			<article class="position">
-				<h3 class="text-label-1">
-					{position.startDate}
+				<h3>
+					<span class="text-label-1">
+						{position.startDate}
+					</span>
+					<span>
+						- {position.endDate}
+					</span>
 				</h3>
 
 				<p class="text-heading-3">
