@@ -83,12 +83,12 @@
     <input type="hidden" name="form-name" value="contact" />
     <div class="form-input">
       <label for="name">Name</label>
-      <input type="text" id="name" bind:value={name} />
+      <input name="name" type="text" id="name" bind:value={name} />
       {#if errors.name}<span class="error">{errors.name}</span>{/if}
     </div>
     <div class="form-input">
       <label for="email">Email</label>
-      <input type="email" id="email" bind:value={email} />
+      <input name="email" type="email" id="email" bind:value={email} />
       {#if errors.email}<span class="error">{errors.email}</span>{/if}
     </div>
 
