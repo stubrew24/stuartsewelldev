@@ -119,7 +119,8 @@
     gap: 40px;
   }
 
-  div {
+  div,
+  form {
     flex: 1;
   }
 
