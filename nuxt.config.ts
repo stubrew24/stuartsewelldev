@@ -3,7 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  modules: ["@nuxt/content", "@nuxt/fonts"],
+  modules: ["@nuxt/content", "@nuxt/fonts", "@nuxt/image"],
+
+  // Resized WebP variants with srcset. Locally (and in `nuxt generate`) these
+  // are built with IPX; on Netlify the Netlify Image CDN is used automatically.
+  image: {
+    quality: 75,
+    format: ["webp"],
+  },
 
   css: ["~/assets/css/main.css"],
 

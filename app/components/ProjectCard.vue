@@ -8,11 +8,13 @@ defineProps<{
 
 <template>
   <article class="card project" :class="{ featured: project.featured }">
-    <img
+    <NuxtImg
       :src="project.image"
       :alt="project.imageAlt"
       width="800"
       height="600"
+      :sizes="project.featured ? '100vw md:60vw xl:720px' : '100vw md:33vw xl:400px'"
+      format="webp"
       loading="lazy"
       class="shot"
     />

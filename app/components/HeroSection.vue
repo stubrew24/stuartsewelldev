@@ -14,11 +14,15 @@ defineProps<{
         <span class="display-italic emphasis">{{ hero.headlineEmphasis }}</span>
       </h1>
       <figure class="portrait">
-        <img
+        <NuxtImg
           src="/images/profile.jpeg"
           :alt="hero.photoAlt"
-          width="1000"
-          height="1000"
+          width="280"
+          height="350"
+          fit="cover"
+          densities="x1 x2"
+          format="webp"
+          preload
           fetchpriority="high"
         />
         <figcaption v-if="hero.photoCaption" class="label">{{ hero.photoCaption }}</figcaption>
