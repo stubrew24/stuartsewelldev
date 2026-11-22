@@ -1,9 +1,10 @@
 order: 2
 company: Nurole
+about: A platform for hiring board members and non-executive directors.
 role: Full Stack Developer
 start: 2020
 end: 2023
 highlights:
-  - Migrated the platform from Backbone.js and Ruby on Rails to Vue and Nuxt.
-  - Led site-wide accessibility improvements across the product.
-  - Built a shared component library to keep the interface consistent.
+  - Moved the platform from an ageing Backbone.js and Ruby on Rails frontend to Vue and Nuxt, giving the team a modern foundation to build on.
+  - Led accessibility improvements across the whole site, so the platform works for more people, including keyboard and screen reader users.
+  - Built a shared component library, keeping the interface consistent and making new features quicker to build.

@@ -57,6 +57,8 @@ export default defineContentConfig({
       schema: z.object({
         order: z.number(),
         company: z.string(),
+        // One plain-language line on what the company does.
+        about: z.string().optional(),
         role: z.string(),
         start: z.number(),
         end: z.number().nullable(),

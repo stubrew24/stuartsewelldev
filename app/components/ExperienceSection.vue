@@ -27,6 +27,7 @@ defineProps<{
           {{ role.role }}
           <span class="display-italic company">· {{ role.company }}</span>
         </h3>
+        <p v-if="role.about" class="about">{{ role.about }}</p>
         <ul class="highlights">
           <li v-for="highlight in role.highlights" :key="highlight">{{ highlight }}</li>
         </ul>
@@ -103,6 +104,12 @@ defineProps<{
 }
 
 .company {
+  color: var(--color-muted);
+}
+
+.about {
+  margin-top: -0.375rem;
+  font-size: var(--text-sm);
   color: var(--color-muted);
 }
 
