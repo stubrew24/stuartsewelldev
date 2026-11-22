@@ -39,6 +39,8 @@ const year = new Date().getFullYear();
 }
 
 .links a {
+  display: inline-block;
+  padding-block: 0.5rem;
   color: var(--color-paper);
 }
 

@@ -56,12 +56,13 @@ ul {
 }
 
 nav a {
+  display: inline-block;
+  padding-block: 0.5rem;
   text-decoration: none;
 }
 
 .contact {
-  display: inline-block;
-  padding: 0.375rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
   background: var(--color-ink);
   color: var(--color-paper);

@@ -56,7 +56,7 @@ defineProps<{
 }
 
 .headline {
-  flex: 999 1 37.5rem;
+  flex: 999 1 26rem;
   min-width: 0;
   font-size: var(--text-hero);
   line-height: 0.98;

@@ -34,9 +34,23 @@ defineProps<{
   color: var(--color-accent);
 }
 
+/* One column on phones, three from tablet up (featured cards span all). */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+}
+
+@media (min-width: 46rem) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    gap: 1.5rem;
+  }
 }
 </style>

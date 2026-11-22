@@ -263,6 +263,8 @@ async function submit() {
 }
 
 .channels a {
+  display: inline-block;
+  padding-block: 0.25rem;
   color: var(--color-paper);
   font-weight: 600;
 }
@@ -292,6 +294,8 @@ label {
 
 input,
 textarea {
+  width: 100%;
+  min-width: 0;
   padding: 0.875rem 1rem;
   border: 1.5px solid transparent;
   border-radius: 0.75rem;
