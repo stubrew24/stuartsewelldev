@@ -1,19 +1,36 @@
 [build]
   command = "npm run generate"
-  # On Netlify, Nuxt builds with the netlify-static preset, which writes to dist/.
-  publish = "dist"
+  # Nuxt is pinned to its plain static preset (see nuxt.config.ts).
+  publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "24"
 
-# Hashed build assets (JS, CSS, fonts) never change: cache for a year.
+# Cache headers, matching what Nuxt's Netlify preset would generate.
+# Hashed JS, CSS and fonts never change; the build manifest must stay fresh.
+[[headers]]
+  for = "/_nuxt/builds/meta/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_nuxt/builds/*"
+  [headers.values]
+    Cache-Control = "public, max-age=1, immutable"
+
 [[headers]]
   for = "/_nuxt/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Source images keep their names when replaced, so cache for a week.
+# Source images and their generated sizes keep their names when an image is
+# replaced, so cache for a week rather than forever.
 [[headers]]
   for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/_ipx/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"

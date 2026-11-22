@@ -5,14 +5,23 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/content", "@nuxt/fonts", "@nuxt/image"],
 
-  // Resized WebP variants with srcset. Locally (and in `nuxt generate`) these
-  // are built with IPX; on Netlify the Netlify Image CDN is used automatically.
+  // Resized WebP variants with srcset, generated at build time as static files.
+  // `ipxStatic` is forced because on Netlify the module would otherwise switch
+  // to the Netlify Image CDN, whose /.netlify/images URLs can't be prerendered.
   image: {
+    provider: "ipxStatic",
     quality: 75,
     format: ["webp"],
   },
 
   css: ["~/assets/css/main.css"],
+
+  // Use the plain static preset everywhere, including on Netlify. Under the
+  // netlify-static preset the prerender crawler doesn't follow the generated
+  // image links, so the /_ipx files would be missing from the deploy.
+  nitro: {
+    preset: "static",
+  },
 
   runtimeConfig: {
     public: {
