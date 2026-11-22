@@ -14,6 +14,14 @@ export default defineNuxtConfig({
     format: ["webp"],
   },
 
+  // ipxStatic only writes files during `nuxt generate`; in dev, images need
+  // the on-demand IPX server instead.
+  $development: {
+    image: {
+      provider: "ipx",
+    },
+  },
+
   css: ["~/assets/css/main.css"],
 
   // Use the plain static preset everywhere, including on Netlify. Under the

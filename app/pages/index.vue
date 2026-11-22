@@ -70,7 +70,8 @@ useHead({
             addressCountry: "GB",
           },
           knowsAbout: ["Frontend development", "Web accessibility", "Vue", "Nuxt", "TypeScript", "Design systems"],
-          sameAs: [site.social.linkedin, site.social.github],
+          // Professional profiles plus the pottery and photography links.
+          sameAs: [site.social.linkedin, site.social.github, ...site.interests.items.map((item) => item.link.url)],
         },
       }),
     },
@@ -93,6 +94,7 @@ useHead({
         :roles="data.experience"
       />
       <SkillsSection :skills="data.site.skills" />
+      <InterestsSection :interests="data.site.interests" />
       <ContactSection :contact="data.site.contact" :email="data.site.email" :social="data.site.social">
         <template #footer>
           <SiteFooter :name="data.site.name" :social="data.site.social" />

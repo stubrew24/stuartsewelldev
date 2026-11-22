@@ -65,6 +65,29 @@ skills:
       A year coaching bootcamp students at Flatiron School. Comfortable
       explaining technical decisions to developers and non-developers.
 
+interests:
+  heading: Away from
+  headingEmphasis: the screen
+  items:
+    - title: Pottery
+      body: >-
+        Wheel-thrown pottery, mostly bowls and cups. Still new to it, so
+        they're not all perfectly round.
+      image: /images/pottery.jpg
+      imageAlt: Three stacked stoneware bowls with pale blue-white glaze and a dark band around the foot
+      # Point this at the pottery site once it exists.
+      link:
+        label: "@stu.throws"
+        url: https://www.instagram.com/stu.throws/
+    - title: Photography
+      body: >-
+        Urban landscapes and street scenes. The worse the weather, the better.
+      image: /images/photography.jpg
+      imageAlt: Electricity pylon fading into thick fog above a field of grazing sheep
+      link:
+        label: "@brewcat24"
+        url: https://www.instagram.com/brewcat24/
+
 contact:
   heading: Let's work
   headingEmphasis: together.
