@@ -1,0 +1,88 @@
+name: Stuart Sewell
+role: Frontend Engineer
+
+# Search results and link previews (LinkedIn, Slack, WhatsApp…).
+# Keep the description under ~155 characters so search results don't cut it off.
+seo:
+  title: Stuart Sewell · Frontend Engineer in Folkestone, Kent
+  description: >-
+    Frontend engineer in Folkestone, Kent, building fast, accessible websites
+    and apps with Vue, Nuxt and TypeScript.
+  locality: Folkestone
+  region: Kent
+since:
+  year: 2019
+  month: 2
+# Split on purpose: joined in the browser to keep it away from scrapers.
+email:
+  user: hello
+  domain: stuartsewell.dev
+
+social:
+  github: https://github.com/stubrew24
+  linkedin: https://www.linkedin.com/in/stuart-sewell/
+
+hero:
+  headline: Websites and apps that are fast, accessible and
+  headlineEmphasis: built to last.
+  intro: >-
+    I'm a frontend engineer. I build the parts of websites and apps that
+    people see and use. For product teams, that means accessible, well-tested
+    interfaces in Vue, Nuxt and TypeScript. For businesses, it means a site
+    that looks good, works for everyone and is easy to keep up to date.
+  photoAlt: Portrait of Stuart Sewell
+  photoCaption: Based in Folkestone, Kent
+
+currently:
+  role: Frontend Engineer at
+  company: Preoptima
+  companyUrl: https://www.preoptima.com/
+  focus: leading the frontend of
+  focusEmphasis: PACER
+  focusUrl: https://website.preoptima.com/pacer
+  detail: >-
+    Built with Westminster City Council, it helps planners assess the carbon
+    impact of new buildings.
+
+# {years} becomes the number of whole years since `since`, e.g. "Seven".
+experienceIntro: "{years} years across product teams and the classroom."
+
+skills:
+  - title: Accessibility
+    body: >-
+      Semantic HTML, keyboard and screen reader support, built to WCAG
+      guidelines. Led site-wide accessibility improvements at Nurole.
+  - title: Testing and CI/CD
+    body: >-
+      Unit and integration testing with automated pipelines. Introduced both
+      at Preoptima, so every change is checked before release.
+  - title: Design systems
+    body: >-
+      Reusable Vue component libraries that keep large products consistent.
+      Built Nurole's shared component library.
+  - title: Mentoring
+    body: >-
+      A year coaching bootcamp students at Flatiron School. Comfortable
+      explaining technical decisions to developers and non-developers.
+
+contact:
+  heading: Let's work
+  headingEmphasis: together.
+  body: >-
+    Have a project in mind, a role to talk about, or just want to say hello?
+    Get in touch.
+  form:
+    labels:
+      name: Name
+      email: Email
+      message: Message
+    messageHint: A few lines about your project or role is plenty.
+    submit: Send message
+    sending: Sending…
+    errors:
+      name: Enter your name.
+      email: Enter an email address like name@example.com.
+      message: Enter a message.
+    sent: Thanks, your message has been sent. I'll reply by email.
+    # {email} becomes the email address.
+    failed: Your message couldn't be sent. Please try again, or email {email}.

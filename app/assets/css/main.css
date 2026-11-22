@@ -1,0 +1,150 @@
+/* Design tokens: taken from the "Combined" mockup (D layout, D2 styling). */
+:root {
+  /* Colour */
+  --color-paper: #eeece5;
+  --color-surface: #f8f7f3;
+  --color-ink: #1c2740;
+  --color-ink-soft: #3a4459;
+  --color-muted: #5a6173;
+  --color-accent: #c2185f;
+  --color-accent-on-dark: #ff8cbf;
+  --color-on-accent: #ffffff;
+  --color-ink-raised: #2a3655;
+  --color-ink-line: #3a4766;
+  --color-on-ink-muted: #c3c8d4;
+  --color-on-ink-faint: #9aa3b8;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-section: clamp(2.5rem, 4vw, 3.25rem);
+  --text-hero: clamp(2.75rem, 6.4vw, 6rem);
+
+  /* Space and shape */
+  --page-max: 77.5rem;
+  --gutter: max(1.25rem, 2.5vw);
+  --section-space: clamp(4rem, 8vw, 6rem);
+  --radius: 1rem;
+  --radius-pill: 999px;
+  --rule: 1.5px solid var(--color-ink);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+figure,
+ol,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Shared utilities */
+.wrap {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--color-muted);
+}
+
+.card {
+  background: var(--color-surface);
+  border: var(--rule);
+  border-radius: var(--radius);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

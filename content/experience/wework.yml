@@ -1,0 +1,9 @@
+order: 3
+company: WeWork
+about: Teaching on the Flatiron School software engineering bootcamp, then part of WeWork.
+role: Software Engineering Coach
+start: 2019
+end: 2020
+highlights:
+  - Taught the full-stack curriculum, covering Ruby, JavaScript and React.
+  - Helped students understand core programming concepts and learn to debug their own code.

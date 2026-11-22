@@ -1,0 +1,12 @@
+order: 4
+title: Hangman
+kind: Side project
+tech: [TypeScript, React Native]
+summary: >-
+  A version of the classic word-guessing game I made as a side project. It started life in the browser and later developed into an Android app on Google Play Store.
+image: /images/hangman.jpeg
+imageAlt: The Hangman game mid-round
+link:
+  label: Play
+  url: https://hangman.stuartsewell.dev/
+source: https://github.com/stubrew24/hangman

@@ -1,0 +1,10 @@
+order: 3
+title: Cafe 53
+kind: Client
+tech: [Firebase, Translation API]
+summary: >-
+  A website for an independent restaurant in Latvia, with a CMS the owners
+  manage themselves. Content is translated automatically into English,
+  Latvian and Russian, so they only write it once.
+image: /images/cafe53.jpeg
+imageAlt: The Cafe 53 restaurant homepage

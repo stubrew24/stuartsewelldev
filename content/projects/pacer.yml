@@ -1,0 +1,15 @@
+order: 1
+featured: true
+title: PACER
+kind: Product at Preoptima
+tech: [Vue 3, Vuetify, TypeScript]
+summary: >-
+  Software that helps planning authorities review the carbon impact of new
+  developments, built with Westminster City Council. I lead the frontend,
+  turning dense technical assessments into clear dashboards and review tools
+  that planning officers can act on.
+image: /images/pacer.jpg
+imageAlt: PACER's whole life carbon dashboard for a development, showing upfront, lifecycle and whole life carbon figures against benchmarks
+link:
+  label: About PACER
+  url: https://website.preoptima.com/pacer
