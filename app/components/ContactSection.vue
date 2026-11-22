@@ -4,7 +4,14 @@ import type { SiteCollectionItem } from "@nuxt/content";
 defineProps<{
   contact: SiteCollectionItem["contact"];
   email: string;
+  social: SiteCollectionItem["social"];
 }>();
+
+// Show the readable part of each profile URL, e.g. "/in/stuart-sewell".
+function shortUrl(url: string): string {
+  const { pathname } = new URL(url);
+  return pathname.replace(/\/$/, "");
+}
 
 type Field = "name" | "email" | "message";
 type Status = "idle" | "sending" | "sent" | "failed";
@@ -76,9 +83,28 @@ async function submit() {
             <span class="display-italic emphasis">{{ contact.headingEmphasis }}</span>
           </h2>
           <p class="body">{{ contact.body }}</p>
-          <p class="body">
-            Email <a :href="`mailto:${email}`" class="email">{{ email }}</a>
-          </p>
+          <dl class="channels">
+            <div>
+              <dt class="label">Email</dt>
+              <dd><a :href="`mailto:${email}`">{{ email }}</a></dd>
+            </div>
+            <div>
+              <dt class="label">LinkedIn</dt>
+              <dd>
+                <a :href="social.linkedin" target="_blank" rel="noopener">
+                  {{ shortUrl(social.linkedin) }}<span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt class="label">GitHub</dt>
+              <dd>
+                <a :href="social.github" target="_blank" rel="noopener">
+                  {{ shortUrl(social.github).slice(1) }}<span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
 
         <form
@@ -201,11 +227,35 @@ async function submit() {
   color: var(--color-on-ink-muted);
 }
 
-.email {
-  color: var(--color-paper);
+.channels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
-.email:hover {
+.channels div {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.channels .label {
+  color: var(--color-on-ink-faint);
+}
+
+.channels dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.channels a {
+  color: var(--color-paper);
+  font-weight: 600;
+}
+
+.channels a:hover {
   color: var(--color-accent-on-dark);
 }
 

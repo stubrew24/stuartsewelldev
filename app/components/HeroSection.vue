@@ -3,6 +3,7 @@ import type { SiteCollectionItem } from "@nuxt/content";
 
 defineProps<{
   hero: SiteCollectionItem["hero"];
+  social: SiteCollectionItem["social"];
 }>();
 </script>
 
@@ -27,9 +28,25 @@ defineProps<{
 
     <div class="bottom">
       <p class="intro">{{ hero.intro }}</p>
-      <div class="actions">
-        <a href="#work" class="button primary">Selected work</a>
-        <a href="#contact" class="button secondary">Get in touch</a>
+      <div class="cta">
+        <div class="actions">
+          <a href="#work" class="button primary">Selected work</a>
+          <a href="#contact" class="button secondary">Get in touch</a>
+        </div>
+        <ul class="profiles" aria-label="Profiles">
+          <li>
+            <a :href="social.linkedin" target="_blank" rel="noopener">
+              LinkedIn<span aria-hidden="true"> ↗</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a :href="social.github" target="_blank" rel="noopener">
+              GitHub<span aria-hidden="true"> ↗</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -90,10 +107,30 @@ defineProps<{
   color: var(--color-ink-soft);
 }
 
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0 0 0 0.25rem;
+  list-style: none;
+  font-weight: 600;
+}
+
+.profiles a {
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
 }
 
 .button {

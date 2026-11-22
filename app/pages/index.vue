@@ -19,12 +19,12 @@ if (!data.value?.site) {
     <SiteHeader :name="data.site.name" :role="data.site.role" :since="data.site.since" />
 
     <main id="main">
-      <HeroSection :hero="data.site.hero" />
+      <HeroSection :hero="data.site.hero" :social="data.site.social" />
       <CurrentlyBand :currently="data.site.currently" />
       <ExperienceSection :intro="data.site.experienceIntro" :roles="data.experience" />
       <SkillsSection :skills="data.site.skills" />
       <ProjectsSection :projects="data.projects" :github="data.site.social.github" />
-      <ContactSection :contact="data.site.contact" :email="data.site.email">
+      <ContactSection :contact="data.site.contact" :email="data.site.email" :social="data.site.social">
         <template #footer>
           <SiteFooter :name="data.site.name" :social="data.site.social" />
         </template>
