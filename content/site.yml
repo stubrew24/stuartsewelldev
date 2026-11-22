@@ -1,6 +1,8 @@
 name: Stuart Sewell
 role: Frontend Engineer
-since: 2019
+since:
+  year: 2019
+  month: 2
 # Split on purpose: joined in the browser to keep it away from scrapers.
 email:
   user: hello
@@ -32,7 +34,8 @@ currently:
     Built with Westminster City Council, it helps planners assess the carbon
     impact of new buildings.
 
-experienceIntro: Seven years across product teams and the classroom.
+# {years} becomes the number of whole years since `since`, e.g. "Seven".
+experienceIntro: "{years} years across product teams and the classroom."
 
 skills:
   - title: Accessibility

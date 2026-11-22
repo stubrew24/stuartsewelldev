@@ -1,10 +1,20 @@
 <script setup lang="ts">
 import type { ExperienceCollectionItem } from "@nuxt/content";
 
-defineProps<{
+const props = defineProps<{
   intro: string;
+  since: { year: number; month: number };
   roles: ExperienceCollectionItem[];
 }>();
+
+const { word: yearsWord } = useYearsSince(props.since.year, props.since.month);
+
+const introText = computed(() =>
+  props.intro.replace(/\{years\}/g, (_match, offset: number) =>
+    // Capitalise when the number starts the sentence.
+    offset === 0 ? yearsWord.value.charAt(0).toUpperCase() + yearsWord.value.slice(1) : yearsWord.value,
+  ),
+);
 </script>
 
 <template>
@@ -12,7 +22,7 @@ defineProps<{
     <div class="experience">
       <div class="aside">
         <h2 id="experience-heading" class="display heading">Experience</h2>
-        <p class="intro">{{ intro }}</p>
+        <p class="intro">{{ introText }}</p>
       </div>
 
       <ol class="timeline">

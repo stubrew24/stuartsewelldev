@@ -9,7 +9,11 @@ export default defineContentConfig({
       schema: z.object({
         name: z.string(),
         role: z.string(),
-        since: z.number(),
+        // Career start, used to keep "{years}" in the experience intro current.
+        since: z.object({
+          year: z.number(),
+          month: z.number().min(1).max(12),
+        }),
         // Stored in parts so the full address never appears in built files.
         email: z.object({
           user: z.string(),
@@ -35,6 +39,7 @@ export default defineContentConfig({
           focusUrl: z.string().url().optional(),
           detail: z.string().optional(),
         }),
+        // "{years}" is replaced with whole years since `since`, as a word.
         experienceIntro: z.string(),
         skills: z.array(
           z.object({

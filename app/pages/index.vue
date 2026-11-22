@@ -22,7 +22,11 @@ if (!data.value?.site) {
       <HeroSection :hero="data.site.hero" />
       <CurrentlyBand :currently="data.site.currently" />
       <ProjectsSection :projects="data.projects" />
-      <ExperienceSection :intro="data.site.experienceIntro" :roles="data.experience" />
+      <ExperienceSection
+        :intro="data.site.experienceIntro"
+        :since="data.site.since"
+        :roles="data.experience"
+      />
       <SkillsSection :skills="data.site.skills" />
       <ContactSection :contact="data.site.contact" :email="data.site.email" :social="data.site.social">
         <template #footer>
