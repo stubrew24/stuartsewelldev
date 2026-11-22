@@ -43,30 +43,35 @@ useHead({
   script: [
     {
       type: "application/ld+json",
-      // Describes Stuart as a Person so search engines can connect the site
-      // with his profiles, role and location.
+      // Marks this page as Stuart's profile page (a Google-supported type),
+      // with the Person as its main subject so search engines can connect the
+      // site with his profiles, role and location.
       innerHTML: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Person",
-        name: site.name,
+        "@type": "ProfilePage",
         url: pageUrl,
-        image: `${siteUrl}/images/profile.jpeg`,
-        jobTitle: site.role,
-        ...(currentRole && {
-          worksFor: {
-            "@type": "Organization",
-            name: currentRole.company,
-            url: site.currently.companyUrl,
+        mainEntity: {
+          "@type": "Person",
+          name: site.name,
+          url: pageUrl,
+          image: `${siteUrl}/images/profile.jpeg`,
+          jobTitle: site.role,
+          ...(currentRole && {
+            worksFor: {
+              "@type": "Organization",
+              name: currentRole.company,
+              url: site.currently.companyUrl,
+            },
+          }),
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: site.seo.locality,
+            addressRegion: site.seo.region,
+            addressCountry: "GB",
           },
-        }),
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: site.seo.locality,
-          addressRegion: site.seo.region,
-          addressCountry: "GB",
+          knowsAbout: ["Frontend development", "Web accessibility", "Vue", "Nuxt", "TypeScript", "Design systems"],
+          sameAs: [site.social.linkedin, site.social.github],
         },
-        knowsAbout: ["Frontend development", "Web accessibility", "Vue", "Nuxt", "TypeScript", "Design systems"],
-        sameAs: [site.social.linkedin, site.social.github],
       }),
     },
   ],
