@@ -128,11 +128,9 @@ a:hover {
 
 .label {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--color-muted);
 }
 
