@@ -8,41 +8,47 @@ defineProps<{
 </script>
 
 <template>
-  <section id="experience" class="wrap experience" aria-labelledby="experience-heading">
-    <div class="aside">
-      <h2 id="experience-heading" class="display heading">Experience</h2>
-      <p class="intro">{{ intro }}</p>
-    </div>
+  <section id="experience" class="wrap" aria-labelledby="experience-heading">
+    <div class="experience">
+      <div class="aside">
+        <h2 id="experience-heading" class="display heading">Experience</h2>
+        <p class="intro">{{ intro }}</p>
+      </div>
 
-    <ol class="timeline">
-      <li v-for="(role, index) in roles" :key="role.company" class="entry">
-        <span class="marker" :class="{ current: index === 0 }" aria-hidden="true" />
-        <p class="label">
-          <time :datetime="String(role.start)">{{ role.start }}</time>
-          —
-          <time v-if="role.end" :datetime="String(role.end)">{{ role.end }}</time>
-          <template v-else>Now</template>
-        </p>
-        <h3 class="role">
-          {{ role.role }}
-          <span class="display-italic company">· {{ role.company }}</span>
-        </h3>
-        <p v-if="role.about" class="about">{{ role.about }}</p>
-        <ul class="highlights">
-          <li v-for="highlight in role.highlights" :key="highlight">{{ highlight }}</li>
-        </ul>
-      </li>
-    </ol>
+      <ol class="timeline">
+        <li v-for="(role, index) in roles" :key="role.company" class="entry">
+          <span class="marker" :class="{ current: index === 0 }" aria-hidden="true" />
+          <p class="label">
+            <time :datetime="String(role.start)">{{ role.start }}</time>
+            —
+            <time v-if="role.end" :datetime="String(role.end)">{{ role.end }}</time>
+            <template v-else>Now</template>
+          </p>
+          <h3 class="role">
+            {{ role.role }}
+            <span class="display-italic company">· {{ role.company }}</span>
+          </h3>
+          <p v-if="role.about" class="about">{{ role.about }}</p>
+          <ul class="highlights">
+            <li v-for="highlight in role.highlights" :key="highlight">{{ highlight }}</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
   </section>
 </template>
 
 <style scoped>
+#experience {
+  scroll-margin-top: 1rem;
+}
+
 .experience {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 4rem;
-  padding-block: var(--section-space) 4.5rem;
-  scroll-margin-top: 1rem;
+  padding-block: 4.5rem;
+  border-top: var(--rule);
 }
 
 .aside {

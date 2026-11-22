@@ -26,7 +26,7 @@ defineProps<{
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  padding-bottom: 7rem;
+  padding-block: var(--section-space) 4.5rem;
   scroll-margin-top: 1rem;
 }
 
@@ -36,8 +36,6 @@ defineProps<{
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
-  padding-top: 4.5rem;
-  border-top: var(--rule);
 }
 
 .heading {
