@@ -22,4 +22,4 @@ npm run generate   # static site in .output/public
 npm run preview    # serve the generated site locally
 ```
 
-Netlify builds with `npm run generate` and publishes `.output/public` (see `netlify.toml`). The contact form uses Netlify Forms.
+Netlify builds with `npm run generate` and publishes `dist` (Nuxt uses its `netlify-static` preset there; see `netlify.toml`). The contact form uses Netlify Forms.
