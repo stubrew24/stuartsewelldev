@@ -16,10 +16,15 @@ if (!data.value?.site) {
 <template>
   <div v-if="data?.site" id="top">
     <a href="#main" class="skip-link">Skip to content</a>
-    <SiteHeader :name="data.site.name" :role="data.site.role" :since="data.site.since" />
+    <SiteHeader
+      :name="data.site.name"
+      :role="data.site.role"
+      :since="data.site.since"
+      :linkedin="data.site.social.linkedin"
+    />
 
     <main id="main">
-      <HeroSection :hero="data.site.hero" :social="data.site.social" />
+      <HeroSection :hero="data.site.hero" />
       <CurrentlyBand :currently="data.site.currently" />
       <ExperienceSection :intro="data.site.experienceIntro" :roles="data.experience" />
       <SkillsSection :skills="data.site.skills" />

@@ -3,12 +3,8 @@ defineProps<{
   name: string;
   role: string;
   since: number;
+  linkedin: string;
 }>();
-
-const links = [
-  { label: "Experience", href: "#experience" },
-  { label: "Work", href: "#work" },
-];
 </script>
 
 <template>
@@ -18,8 +14,12 @@ const links = [
       <span class="display-italic tagline">{{ role }}, since {{ since }}</span>
       <nav aria-label="Main">
         <ul>
-          <li v-for="link in links" :key="link.href">
-            <a :href="link.href">{{ link.label }}</a>
+          <li><a href="#experience">Experience</a></li>
+          <li>
+            <a :href="linkedin" target="_blank" rel="noopener">
+              LinkedIn<span aria-hidden="true"> ↗</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
           </li>
           <li><a href="#contact" class="contact">Contact</a></li>
         </ul>
