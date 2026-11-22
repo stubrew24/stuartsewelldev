@@ -6,6 +6,6 @@ start: 2023
 end: null
 highlights:
   - Leading frontend development of PACER, built with Westminster City Council to help planning authorities review the whole life carbon of new developments.
-  - Built Preoptima's marketing website, including the PACER product pages, with Nuxt and Sanity so the team can publish and update content themselves.
+  - Built Preoptima's marketing website with Nuxt and Sanity, so the team can publish and update content themselves.
   - Introduced automated testing and CI/CD pipelines, so every change is checked before it reaches users.
   - Refactoring legacy code while improving the product's design and user experience.
