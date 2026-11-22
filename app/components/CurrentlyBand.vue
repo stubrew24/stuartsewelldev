@@ -15,7 +15,13 @@ defineProps<{
           {{ currently.role }}
           <a :href="currently.companyUrl" target="_blank" rel="noopener">{{ currently.company }}</a>,
           {{ currently.focus }}
-          <span class="display-italic">{{ currently.focusEmphasis }}</span>
+          <a
+            v-if="currently.focusUrl"
+            :href="currently.focusUrl"
+            target="_blank"
+            rel="noopener"
+            class="display-italic"
+          >{{ currently.focusEmphasis }}</a><span v-else class="display-italic">{{ currently.focusEmphasis }}</span>.
         </p>
         <p v-if="currently.detail" class="detail">{{ currently.detail }}</p>
       </div>

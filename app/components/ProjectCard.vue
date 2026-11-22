@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <article class="card project">
+  <article class="card project" :class="{ featured: project.featured }">
     <img
       :src="project.image"
       :alt="project.imageAlt"
@@ -45,6 +45,7 @@ defineProps<{
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: top left;
   border-bottom: var(--rule);
 }
 
@@ -64,6 +65,48 @@ defineProps<{
   flex: 1;
   font-size: var(--text-sm);
   color: var(--color-ink-soft);
+}
+
+/* Featured: full-width row, image beside the text on wide screens. */
+.featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.featured .shot {
+  flex: 3 1 28rem;
+  min-width: 0;
+  border-bottom: none;
+  border-right: var(--rule);
+}
+
+.featured .body {
+  flex: 2 1 20rem;
+  min-width: 0;
+  justify-content: center;
+  gap: 0.875rem;
+  padding: 2.5rem;
+}
+
+.featured .title {
+  font-size: var(--text-section);
+}
+
+.featured .summary {
+  flex: 0;
+  font-size: var(--text-base);
+}
+
+@media (max-width: 52rem) {
+  .featured .shot {
+    border-right: none;
+    border-bottom: var(--rule);
+  }
+
+  .featured .body {
+    padding: 1.5rem;
+  }
 }
 
 .links {

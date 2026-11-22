@@ -32,6 +32,7 @@ export default defineContentConfig({
           companyUrl: z.string().url(),
           focus: z.string(),
           focusEmphasis: z.string(),
+          focusUrl: z.string().url().optional(),
           detail: z.string().optional(),
         }),
         experienceIntro: z.string(),
@@ -69,6 +70,8 @@ export default defineContentConfig({
       source: "projects/*.yml",
       schema: z.object({
         order: z.number(),
+        // Featured projects span the full width above the others.
+        featured: z.boolean().default(false),
         title: z.string(),
         kind: z.string(),
         tech: z.array(z.string()),
