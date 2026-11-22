@@ -13,7 +13,7 @@ defineProps<{
       :alt="project.imageAlt"
       width="800"
       height="600"
-      :sizes="project.featured ? '100vw md:60vw xl:720px' : '100vw md:33vw xl:400px'"
+      :sizes="project.featured ? '104px md:50vw lg:50vw xl:600px' : '104px md:50vw lg:33vw xl:400px'"
       format="webp"
       loading="lazy"
       class="shot"
@@ -69,46 +69,92 @@ defineProps<{
   color: var(--color-ink-soft);
 }
 
-/* Featured: full-width row, image beside the text on wide screens. */
-.featured {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  flex-wrap: wrap;
+/*
+ * Phones: no card chrome. A small thumbnail sits beside the label and title,
+ * with the summary and links full width beneath.
+ */
+@media (max-width: 45.99rem) {
+  .project.card {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    column-gap: 1rem;
+    row-gap: 0.375rem;
+    overflow: visible;
+    background: none;
+    border: none;
+    border-radius: 0;
+  }
+
+  .shot {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+    border: var(--rule);
+    border-radius: 0.625rem;
+  }
+
+  /* Let the label, title, summary and links join the card's grid. */
+  .body {
+    display: contents;
+  }
+
+  .label {
+    grid-column: 2;
+    align-self: end;
+  }
+
+  .title {
+    grid-column: 2;
+    align-self: start;
+  }
+
+  .summary,
+  .links {
+    grid-column: 1 / -1;
+  }
+
+  .summary {
+    margin-top: 0.5rem;
+  }
 }
 
-.featured .shot {
-  flex: 3 1 28rem;
-  min-width: 0;
-  aspect-ratio: 16 / 9;
-  border-bottom: none;
-  border-right: var(--rule);
+/* Tablet: a shorter crop keeps the 2×2 grid compact. */
+@media (min-width: 46rem) and (max-width: 63.99rem) {
+  .shot {
+    aspect-ratio: 16 / 10;
+  }
 }
 
-.featured .body {
-  flex: 2 1 20rem;
-  min-width: 0;
-  justify-content: center;
-  gap: 0.875rem;
-  padding: 2.5rem;
-}
+/* Desktop: featured projects span the grid, image beside the text. */
+@media (min-width: 64rem) {
+  .featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
 
-.featured .title {
-  font-size: var(--text-section);
-}
-
-.featured .summary {
-  flex: 0;
-  font-size: var(--text-base);
-}
-
-@media (max-width: 52rem) {
   .featured .shot {
-    border-right: none;
-    border-bottom: var(--rule);
+    flex: 1 1 0;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    border-bottom: none;
+    border-right: var(--rule);
   }
 
   .featured .body {
-    padding: 1.5rem;
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    gap: 0.875rem;
+    padding: 2.5rem;
+  }
+
+  .featured .title {
+    font-size: var(--text-section);
+  }
+
+  .featured .summary {
+    flex: 0;
+    font-size: var(--text-base);
   }
 }
 

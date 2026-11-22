@@ -34,22 +34,26 @@ defineProps<{
   color: var(--color-accent);
 }
 
-/* One column on phones, three from tablet up (featured cards span all). */
+/*
+ * Phone: one column. Tablet: two columns, every project the same size (2×2).
+ * Desktop: three columns, with featured projects spanning the full width.
+ */
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 46rem) {
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 }
 
 @media (min-width: 64rem) {
   .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
   }
 }

@@ -24,10 +24,11 @@ defineProps<{
   padding-bottom: var(--section-space);
 }
 
+/* Phone: plain text list. Tablet: 2×2 cards. Desktop: four cards in a row. */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.75rem;
   padding: 0;
   list-style: none;
 }
@@ -35,8 +36,33 @@ defineProps<{
 .skill {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  padding: 1.5rem;
+  gap: 0.5rem;
+}
+
+@media (max-width: 45.99rem) {
+  .skill.card {
+    background: none;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 46rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .skill {
+    gap: 0.625rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .bar {
