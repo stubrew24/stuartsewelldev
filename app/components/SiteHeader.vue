@@ -11,8 +11,8 @@ defineProps<{
       <a href="#top" class="display brand">{{ name }}<span class="dot">.</span></a>
       <nav aria-label="Main">
         <ul>
-          <li><a href="#experience">Experience</a></li>
-          <li>
+          <li class="wide-only"><a href="#experience">Experience</a></li>
+          <li class="wide-only">
             <a :href="linkedin" target="_blank" rel="noopener">
               LinkedIn<span aria-hidden="true"> ↗</span>
               <span class="visually-hidden"> (opens in a new tab)</span>
@@ -71,5 +71,22 @@ nav a {
 .contact:hover {
   background: var(--color-accent);
   color: var(--color-on-accent);
+}
+
+/* Phones: one row with just the name and Contact. Experience is a short
+   scroll away and LinkedIn is in the contact section and footer. */
+@media (max-width: 45.99rem) {
+  .bar {
+    flex-wrap: nowrap;
+    padding-block: 1rem;
+  }
+
+  .brand {
+    font-size: 1.375rem;
+  }
+
+  .wide-only {
+    display: none;
+  }
 }
 </style>
