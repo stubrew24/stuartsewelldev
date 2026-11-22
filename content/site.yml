@@ -35,22 +35,22 @@ currently:
 experienceIntro: Seven years across product teams and the classroom.
 
 skills:
-  - title: Accessible by default
+  - title: Accessibility
     body: >-
-      Semantic markup, keyboard support and testing with assistive technology
-      from the start, not bolted on at the end.
-  - title: Tested and shipped
+      Semantic HTML, keyboard and screen reader support, built to WCAG
+      guidelines. Led site-wide accessibility improvements at Nurole.
+  - title: Testing and CI/CD
     body: >-
-      Unit and integration tests running in CI, so changes go out with
-      confidence instead of crossed fingers.
-  - title: Systems, not pages
+      Unit and integration testing with automated pipelines. Introduced both
+      at Preoptima, so every change is checked before release.
+  - title: Design systems
     body: >-
-      Component libraries and design tokens that keep a product consistent as
-      it grows.
-  - title: A teacher at heart
+      Reusable Vue component libraries that keep large products consistent.
+      Built Nurole's shared component library.
+  - title: Mentoring
     body: >-
-      A year coaching new engineers taught me to explain the why, not just
-      the how.
+      A year coaching bootcamp students at Flatiron School. Comfortable
+      explaining technical decisions to developers and non-developers.
 
 contact:
   heading: Let's work
