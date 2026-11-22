@@ -25,7 +25,7 @@
   --text-xl: 1.5rem;
   --text-2xl: 1.875rem;
   --text-section: clamp(2.5rem, 4vw, 3.25rem);
-  --text-hero: clamp(3.25rem, 7.6vw, 7.25rem);
+  --text-hero: clamp(2.75rem, 6.4vw, 6rem);
 
   /* Space and shape */
   --page-max: 77.5rem;
