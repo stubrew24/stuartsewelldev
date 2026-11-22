@@ -23,6 +23,13 @@ export default defineNuxtConfig({
     preset: "static",
   },
 
+  // A one-page static site doesn't need to detect new deploys mid-session,
+  // and without the manifest everything under /_nuxt is content-hashed and
+  // safe to cache for a year (see netlify.toml).
+  experimental: {
+    appManifest: false,
+  },
+
   runtimeConfig: {
     public: {
       // Set NUXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN in Netlify to enable

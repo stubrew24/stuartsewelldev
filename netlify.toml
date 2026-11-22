@@ -6,18 +6,8 @@
 [build.environment]
   NODE_VERSION = "24"
 
-# Cache headers, matching what Nuxt's Netlify preset would generate.
-# Hashed JS, CSS and fonts never change; the build manifest must stay fresh.
-[[headers]]
-  for = "/_nuxt/builds/meta/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/_nuxt/builds/*"
-  [headers.values]
-    Cache-Control = "public, max-age=1, immutable"
-
+# Everything under /_nuxt is content-hashed (the app manifest is disabled in
+# nuxt.config.ts), so it can be cached for a year.
 [[headers]]
   for = "/_nuxt/*"
   [headers.values]
