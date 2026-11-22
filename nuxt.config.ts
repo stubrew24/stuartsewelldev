@@ -7,6 +7,14 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
+  runtimeConfig: {
+    public: {
+      // Set NUXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN in Netlify to enable
+      // Cloudflare Web Analytics. Left empty, no analytics script loads.
+      cloudflareAnalyticsToken: "",
+    },
+  },
+
   app: {
     head: {
       htmlAttrs: { lang: "en" },
@@ -18,7 +26,10 @@ export default defineNuxtConfig({
             "Stuart Sewell is a frontend engineer building accessible, fast and maintainable interfaces with Vue, Nuxt and TypeScript.",
         },
       ],
-      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      ],
     },
   },
 
