@@ -1,8 +1,6 @@
 <script setup lang="ts">
 defineProps<{
   name: string;
-  role: string;
-  since: number;
   linkedin: string;
 }>();
 </script>
@@ -11,7 +9,6 @@ defineProps<{
   <header class="wrap site-header">
     <div class="bar">
       <a href="#top" class="display brand">{{ name }}<span class="dot">.</span></a>
-      <span class="display-italic tagline">{{ role }}, since {{ since }}</span>
       <nav aria-label="Main">
         <ul>
           <li><a href="#experience">Experience</a></li>
@@ -48,11 +45,6 @@ defineProps<{
   color: var(--color-accent);
 }
 
-.tagline {
-  font-size: 1.1875rem;
-  color: var(--color-muted);
-}
-
 ul {
   display: flex;
   flex-wrap: wrap;
@@ -78,11 +70,5 @@ nav a {
 .contact:hover {
   background: var(--color-accent);
   color: var(--color-on-accent);
-}
-
-@media (max-width: 48rem) {
-  .tagline {
-    display: none;
-  }
 }
 </style>
