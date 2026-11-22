@@ -70,7 +70,8 @@ useHead({
             addressCountry: "GB",
           },
           knowsAbout: ["Frontend development", "Web accessibility", "Vue", "Nuxt", "TypeScript", "Design systems"],
-          sameAs: [site.social.linkedin, site.social.github],
+          // Professional profiles plus the pottery and photography links.
+          sameAs: [site.social.linkedin, site.social.github, ...site.interests.items.map((item) => item.link.url)],
         },
       }),
     },
