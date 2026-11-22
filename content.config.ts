@@ -10,7 +10,11 @@ export default defineContentConfig({
         name: z.string(),
         role: z.string(),
         since: z.number(),
-        email: z.string(),
+        // Stored in parts so the full address never appears in built files.
+        email: z.object({
+          user: z.string(),
+          domain: z.string(),
+        }),
         social: z.object({
           github: z.string().url(),
           linkedin: z.string().url(),

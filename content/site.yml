@@ -1,7 +1,10 @@
 name: Stuart Sewell
 role: Frontend Engineer
 since: 2019
-email: hello@stuartsewell.dev
+# Split on purpose: joined in the browser to keep it away from scrapers.
+email:
+  user: hello
+  domain: stuartsewell.dev
 
 social:
   github: https://github.com/stubrew24
@@ -48,4 +51,4 @@ contact:
   headingEmphasis: together.
   body: >-
     Have a project in mind, a role to talk about, or just want to say hello?
-    Send a message below or email me directly.
+    Get in touch.

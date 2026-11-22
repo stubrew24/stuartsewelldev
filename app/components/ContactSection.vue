@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type { SiteCollectionItem } from "@nuxt/content";
 
-defineProps<{
+const props = defineProps<{
   contact: SiteCollectionItem["contact"];
-  email: string;
+  email: SiteCollectionItem["email"];
   social: SiteCollectionItem["social"];
 }>();
+
+const { address: emailAddress, href: emailHref } = useEmailAddress(() => props.email);
 
 // Show the readable part of each profile URL, e.g. "/in/stuart-sewell".
 function shortUrl(url: string): string {
@@ -86,7 +88,10 @@ async function submit() {
           <dl class="channels">
             <div>
               <dt class="label">Email</dt>
-              <dd><a :href="`mailto:${email}`">{{ email }}</a></dd>
+              <dd>
+                <a v-if="emailHref" :href="emailHref">{{ emailAddress }}</a>
+                <span v-else>{{ emailAddress }}</span>
+              </dd>
             </div>
             <div>
               <dt class="label">LinkedIn</dt>
@@ -175,7 +180,7 @@ async function submit() {
           <p class="status" role="status">
             <template v-if="status === 'sent'">Thanks, your message has been sent. I'll reply by email.</template>
             <template v-else-if="status === 'failed'">
-              Your message couldn't be sent. Please try again, or email {{ email }}.
+              Your message couldn't be sent. Please try again, or email {{ emailAddress }}.
             </template>
           </p>
         </form>
