@@ -71,8 +71,8 @@ interests:
   items:
     - title: Pottery
       body: >-
-        A newer hobby. I'm learning to throw functional pieces on the wheel,
-        mostly bowls and cups, and every firing still teaches me something.
+        Wheel-thrown pottery, mostly bowls and cups. Still new to it, and
+        enjoying the learning.
       image: /images/pottery.jpg
       imageAlt: Three stacked stoneware bowls with pale blue-white glaze and a dark band around the foot
       # Point this at the pottery site once it exists.
@@ -81,8 +81,7 @@ interests:
         url: https://www.instagram.com/stu.throws/
     - title: Photography
       body: >-
-        Urban landscapes, often in black and white. I'm drawn to fog, wet
-        streets at night, concrete and power lines.
+        Urban landscapes and street scenes. The worse the weather, the better.
       image: /images/photography.jpg
       imageAlt: Electricity pylon fading into thick fog above a field of grazing sheep
       link:
