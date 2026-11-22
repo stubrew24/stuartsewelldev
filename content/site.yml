@@ -25,8 +25,11 @@ currently:
   role: Frontend Engineer at
   company: Preoptima
   companyUrl: https://www.preoptima.com/
-  focus: leading the frontend of a new product built with
-  focusEmphasis: Westminster City Council.
+  focus: leading the frontend of
+  focusEmphasis: PACER.
+  detail: >-
+    Built with Westminster City Council, it helps planners assess the carbon
+    impact of new buildings.
 
 experienceIntro: Seven years across product teams and the classroom.
 

@@ -32,6 +32,7 @@ export default defineContentConfig({
           companyUrl: z.string().url(),
           focus: z.string(),
           focusEmphasis: z.string(),
+          detail: z.string().optional(),
         }),
         experienceIntro: z.string(),
         skills: z.array(
