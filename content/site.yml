@@ -61,3 +61,18 @@ contact:
   body: >-
     Have a project in mind, a role to talk about, or just want to say hello?
     Get in touch.
+  form:
+    labels:
+      name: Name
+      email: Email
+      message: Message
+    messageHint: A few lines about your project or role is plenty.
+    submit: Send message
+    sending: Sending…
+    errors:
+      name: Enter your name.
+      email: Enter an email address like name@example.com.
+      message: Enter a message.
+    sent: Thanks, your message has been sent. I'll reply by email.
+    # {email} becomes the email address.
+    failed: Your message couldn't be sent. Please try again, or email {email}.

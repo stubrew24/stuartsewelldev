@@ -32,12 +32,20 @@ function setFieldRef(field: Field) {
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const copy = computed(() => props.contact.form);
+const failedMessage = computed(() => copy.value.failed.replace("{email}", emailAddress.value));
+
+// Link a field to its hint and/or error so screen readers announce both.
+function describedBy(field: Field, hint?: string): string | undefined {
+  const ids = [hint, errors[field] ? `contact-${field}-error` : undefined].filter(Boolean);
+  return ids.length ? ids.join(" ") : undefined;
+}
+
 function validate(): boolean {
-  errors.name = form.name.trim() ? undefined : "Enter your name.";
-  errors.email = EMAIL_PATTERN.test(form.email.trim())
-    ? undefined
-    : "Enter an email address like name@example.com.";
-  errors.message = form.message.trim() ? undefined : "Enter a message.";
+  const messages = copy.value.errors;
+  errors.name = form.name.trim() ? undefined : messages.name;
+  errors.email = EMAIL_PATTERN.test(form.email.trim()) ? undefined : messages.email;
+  errors.message = form.message.trim() ? undefined : messages.message;
 
   const firstInvalid = (["name", "email", "message"] as Field[]).find((f) => errors[f]);
   if (firstInvalid) {
@@ -127,7 +135,7 @@ async function submit() {
           </p>
 
           <div class="field">
-            <label for="contact-name">Name</label>
+            <label for="contact-name">{{ copy.labels.name }}</label>
             <input
               id="contact-name"
               :ref="setFieldRef('name')"
@@ -137,13 +145,13 @@ async function submit() {
               autocomplete="name"
               required
               :aria-invalid="!!errors.name"
-              :aria-describedby="errors.name ? 'contact-name-error' : undefined"
+              :aria-describedby="describedBy('name')"
             />
             <p v-if="errors.name" id="contact-name-error" class="error">{{ errors.name }}</p>
           </div>
 
           <div class="field">
-            <label for="contact-email">Email</label>
+            <label for="contact-email">{{ copy.labels.email }}</label>
             <input
               id="contact-email"
               :ref="setFieldRef('email')"
@@ -153,13 +161,14 @@ async function submit() {
               autocomplete="email"
               required
               :aria-invalid="!!errors.email"
-              :aria-describedby="errors.email ? 'contact-email-error' : undefined"
+              :aria-describedby="describedBy('email')"
             />
             <p v-if="errors.email" id="contact-email-error" class="error">{{ errors.email }}</p>
           </div>
 
           <div class="field">
-            <label for="contact-message">Message</label>
+            <label for="contact-message">{{ copy.labels.message }}</label>
+            <p v-if="copy.messageHint" id="contact-message-hint" class="hint">{{ copy.messageHint }}</p>
             <textarea
               id="contact-message"
               :ref="setFieldRef('message')"
@@ -168,20 +177,18 @@ async function submit() {
               rows="5"
               required
               :aria-invalid="!!errors.message"
-              :aria-describedby="errors.message ? 'contact-message-error' : undefined"
+              :aria-describedby="describedBy('message', copy.messageHint ? 'contact-message-hint' : undefined)"
             />
             <p v-if="errors.message" id="contact-message-error" class="error">{{ errors.message }}</p>
           </div>
 
           <button type="submit" class="submit" :disabled="status === 'sending'">
-            {{ status === "sending" ? "Sending…" : "Send message" }}
+            {{ status === "sending" ? copy.sending : copy.submit }}
           </button>
 
           <p class="status" role="status">
-            <template v-if="status === 'sent'">Thanks, your message has been sent. I'll reply by email.</template>
-            <template v-else-if="status === 'failed'">
-              Your message couldn't be sent. Please try again, or email {{ emailAddress }}.
-            </template>
+            <template v-if="status === 'sent'">{{ copy.sent }}</template>
+            <template v-else-if="status === 'failed'">{{ failedMessage }}</template>
           </p>
         </form>
       </div>
@@ -299,6 +306,12 @@ textarea {
 input[aria-invalid="true"],
 textarea[aria-invalid="true"] {
   border-color: var(--color-accent-on-dark);
+}
+
+.hint {
+  margin-top: -0.125rem;
+  font-size: 0.9375rem;
+  color: var(--color-on-ink-muted);
 }
 
 .error {

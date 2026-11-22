@@ -51,6 +51,24 @@ export default defineContentConfig({
           heading: z.string(),
           headingEmphasis: z.string(),
           body: z.string(),
+          form: z.object({
+            labels: z.object({
+              name: z.string(),
+              email: z.string(),
+              message: z.string(),
+            }),
+            messageHint: z.string().optional(),
+            submit: z.string(),
+            sending: z.string(),
+            errors: z.object({
+              name: z.string(),
+              email: z.string(),
+              message: z.string(),
+            }),
+            sent: z.string(),
+            // "{email}" is replaced with the email address.
+            failed: z.string(),
+          }),
         }),
       }),
     }),
