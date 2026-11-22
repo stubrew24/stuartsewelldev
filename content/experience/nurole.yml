@@ -1,0 +1,9 @@
+order: 2
+company: Nurole
+role: Full Stack Developer
+start: 2020
+end: 2023
+highlights:
+  - Migrated the platform from Backbone.js and Ruby on Rails to Vue and Nuxt.
+  - Led site-wide accessibility improvements across the product.
+  - Built a shared component library to keep the interface consistent.

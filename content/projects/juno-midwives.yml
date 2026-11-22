@@ -1,0 +1,13 @@
+order: 1
+title: Juno Midwives
+kind: Client
+tech: [Nuxt, Vuetify, Sanity]
+summary: >-
+  A redesign for an independent midwifery practice, with a headless CMS so the
+  team can update their own content without a developer.
+image: /images/junomidwives.jpg
+imageAlt: The Juno Midwives homepage
+link:
+  label: Visit site
+  url: https://test.junomidwives.co.uk
+source: https://github.com/junomidwives/frontend

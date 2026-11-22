@@ -1,4 +1,51 @@
 name: Stuart Sewell
 role: Frontend Engineer
-tagline: Interfaces that are accessible, fast and built to last.
+since: 2019
 email: hello@stuartsewell.dev
+
+social:
+  github: https://github.com/stubrew24
+  linkedin: https://www.linkedin.com/in/stuart-sewell/
+
+hero:
+  headline: Interfaces that are accessible, fast and
+  headlineEmphasis: built to last.
+  intro: >-
+    I'm a frontend engineer who sweats the details: semantic HTML, considered
+    CSS and JavaScript that earns its place. I like making complex products
+    feel simple, and leaving codebases in better shape than I found them.
+  photoAlt: Portrait of Stuart Sewell
+
+currently:
+  role: Frontend Engineer at
+  company: Preoptima
+  companyUrl: https://www.preoptima.com/
+  focus: leading the frontend of a new product built with
+  focusEmphasis: Westminster City Council.
+
+experienceIntro: Seven years across product teams and the classroom.
+
+skills:
+  - title: Accessible by default
+    body: >-
+      Semantic markup, keyboard support and testing with assistive technology
+      from the start, not bolted on at the end.
+  - title: Tested and shipped
+    body: >-
+      Unit and integration tests running in CI, so changes go out with
+      confidence instead of crossed fingers.
+  - title: Systems, not pages
+    body: >-
+      Component libraries and design tokens that keep a product consistent as
+      it grows.
+  - title: A teacher at heart
+    body: >-
+      A year coaching new engineers taught me to explain the why, not just
+      the how.
+
+contact:
+  heading: Let's work
+  headingEmphasis: together.
+  body: >-
+    Have a project in mind, a role to talk about, or just want to say hello?
+    Send a message below or email me directly.

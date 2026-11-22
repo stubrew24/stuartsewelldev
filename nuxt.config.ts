@@ -5,6 +5,8 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/content", "@nuxt/fonts"],
 
+  css: ["~/assets/css/main.css"],
+
   app: {
     head: {
       htmlAttrs: { lang: "en" },
