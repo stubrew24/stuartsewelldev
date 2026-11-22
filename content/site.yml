@@ -1,5 +1,15 @@
 name: Stuart Sewell
 role: Frontend Engineer
+
+# Search results and link previews (LinkedIn, Slack, WhatsApp…).
+# Keep the description under ~155 characters so search results don't cut it off.
+seo:
+  title: Stuart Sewell · Frontend Engineer in Folkestone, Kent
+  description: >-
+    Frontend engineer in Folkestone, Kent, building fast, accessible websites
+    and apps with Vue, Nuxt and TypeScript.
+  locality: Folkestone
+  region: Kent
 since:
   year: 2019
   month: 2

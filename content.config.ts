@@ -9,6 +9,13 @@ export default defineContentConfig({
       schema: z.object({
         name: z.string(),
         role: z.string(),
+        // Search results and link previews.
+        seo: z.object({
+          title: z.string(),
+          description: z.string(),
+          locality: z.string(),
+          region: z.string(),
+        }),
         // Career start, used to keep "{years}" in the experience intro current.
         since: z.object({
           year: z.number(),

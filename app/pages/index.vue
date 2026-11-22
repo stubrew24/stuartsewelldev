@@ -11,6 +11,66 @@ const { data } = await useAsyncData("home", async () => {
 if (!data.value?.site) {
   throw createError({ statusCode: 500, statusMessage: "Site content is missing" });
 }
+
+// --- SEO: title, description, link previews, canonical URL, structured data ---
+const site = data.value.site;
+const { siteUrl } = useRuntimeConfig().public;
+const pageUrl = `${siteUrl}/`;
+const shareImage = `${siteUrl}/og-image.jpg`;
+const currentRole = data.value.experience.find((role) => role.end === null);
+
+useSeoMeta({
+  title: site.seo.title,
+  description: site.seo.description,
+  ogType: "profile",
+  ogSiteName: site.name,
+  ogUrl: pageUrl,
+  ogTitle: site.seo.title,
+  ogDescription: site.seo.description,
+  ogImage: shareImage,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: `${site.name}, ${site.role} in ${site.seo.locality}, ${site.seo.region}`,
+  ogLocale: "en_GB",
+  twitterCard: "summary_large_image",
+  twitterTitle: site.seo.title,
+  twitterDescription: site.seo.description,
+  twitterImage: shareImage,
+});
+
+useHead({
+  link: [{ rel: "canonical", href: pageUrl }],
+  script: [
+    {
+      type: "application/ld+json",
+      // Describes Stuart as a Person so search engines can connect the site
+      // with his profiles, role and location.
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: site.name,
+        url: pageUrl,
+        image: `${siteUrl}/images/profile.jpeg`,
+        jobTitle: site.role,
+        ...(currentRole && {
+          worksFor: {
+            "@type": "Organization",
+            name: currentRole.company,
+            url: site.currently.companyUrl,
+          },
+        }),
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: site.seo.locality,
+          addressRegion: site.seo.region,
+          addressCountry: "GB",
+        },
+        knowsAbout: ["Frontend development", "Web accessibility", "Vue", "Nuxt", "TypeScript", "Design systems"],
+        sameAs: [site.social.linkedin, site.social.github],
+      }),
+    },
+  ],
+});
 </script>
 
 <template>

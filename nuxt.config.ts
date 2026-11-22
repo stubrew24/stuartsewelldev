@@ -32,6 +32,9 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      // Canonical address, used for the canonical link and absolute
+      // link-preview URLs (so netlify.app copies point here).
+      siteUrl: "https://stuartsewell.dev",
       // Set NUXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN in Netlify to enable
       // Cloudflare Web Analytics. Left empty, no analytics script loads.
       cloudflareAnalyticsToken: "",
@@ -40,15 +43,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      htmlAttrs: { lang: "en" },
-      title: "Stuart Sewell | Frontend Engineer",
-      meta: [
-        {
-          name: "description",
-          content:
-            "Stuart Sewell is a frontend engineer building accessible, fast and maintainable interfaces with Vue, Nuxt and TypeScript.",
-        },
-      ],
+      htmlAttrs: { lang: "en-GB" },
+      // Title, description and link-preview tags come from content/site.yml
+      // (see app/pages/index.vue).
       link: [
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
