@@ -19,6 +19,7 @@ hero:
     interfaces in Vue, Nuxt and TypeScript. For businesses, it means a site
     that looks good, works for everyone and is easy to keep up to date.
   photoAlt: Portrait of Stuart Sewell
+  photoCaption: Based in Folkestone, Kent
 
 currently:
   role: Frontend Engineer at

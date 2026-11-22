@@ -24,6 +24,7 @@ export default defineContentConfig({
           headlineEmphasis: z.string(),
           intro: z.string(),
           photoAlt: z.string(),
+          photoCaption: z.string().optional(),
         }),
         currently: z.object({
           role: z.string(),

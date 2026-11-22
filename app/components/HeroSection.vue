@@ -13,14 +13,16 @@ defineProps<{
         {{ hero.headline }}
         <span class="display-italic emphasis">{{ hero.headlineEmphasis }}</span>
       </h1>
-      <img
-        class="portrait"
-        src="/images/profile.jpeg"
-        :alt="hero.photoAlt"
-        width="1000"
-        height="1000"
-        fetchpriority="high"
-      />
+      <figure class="portrait">
+        <img
+          src="/images/profile.jpeg"
+          :alt="hero.photoAlt"
+          width="1000"
+          height="1000"
+          fetchpriority="high"
+        />
+        <figcaption v-if="hero.photoCaption" class="label">{{ hero.photoCaption }}</figcaption>
+      </figure>
     </div>
 
     <div class="bottom">
@@ -68,6 +70,13 @@ defineProps<{
   flex: 1 1 13.75rem;
   max-width: 17.5rem;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.portrait img {
+  width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
