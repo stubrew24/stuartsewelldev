@@ -21,7 +21,7 @@ if (!data.value?.site) {
     <main id="main">
       <HeroSection :hero="data.site.hero" />
       <CurrentlyBand :currently="data.site.currently" />
-      <ProjectsSection :projects="data.projects" :github="data.site.social.github" />
+      <ProjectsSection :projects="data.projects" />
       <ExperienceSection :intro="data.site.experienceIntro" :roles="data.experience" />
       <SkillsSection :skills="data.site.skills" />
       <ContactSection :contact="data.site.contact" :email="data.site.email" :social="data.site.social">

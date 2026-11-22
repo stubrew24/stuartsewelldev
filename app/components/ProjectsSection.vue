@@ -3,18 +3,14 @@ import type { ProjectsCollectionItem } from "@nuxt/content";
 
 defineProps<{
   projects: ProjectsCollectionItem[];
-  github: string;
 }>();
 </script>
 
 <template>
   <section id="work" class="wrap work" aria-labelledby="work-heading">
-    <div class="head">
-      <h2 id="work-heading" class="display heading">
-        Selected <span class="display-italic emphasis">work</span>
-      </h2>
-      <a :href="github" target="_blank" rel="noopener" class="label more">More on GitHub →</a>
-    </div>
+    <h2 id="work-heading" class="display heading">
+      Selected <span class="display-italic emphasis">work</span>
+    </h2>
     <div class="grid">
       <ProjectCard v-for="project in projects" :key="project.title" :project="project" />
     </div>
@@ -30,27 +26,11 @@ defineProps<{
   scroll-margin-top: 1rem;
 }
 
-.head {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-}
-
 .heading {
   font-size: var(--text-section);
 }
 
 .emphasis {
-  color: var(--color-accent);
-}
-
-.more {
-  text-decoration: none;
-}
-
-.more:hover {
   color: var(--color-accent);
 }
 
