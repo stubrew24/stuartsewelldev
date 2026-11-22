@@ -77,6 +77,7 @@ defineProps<{
 .featured .shot {
   flex: 3 1 28rem;
   min-width: 0;
+  aspect-ratio: 16 / 9;
   border-bottom: none;
   border-right: var(--rule);
 }
