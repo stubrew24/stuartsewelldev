@@ -54,8 +54,6 @@ export default defineNuxtConfig({
     },
     families: [
       { name: "Fraunces", provider: "google", weights: [500, 700], styles: ["normal", "italic"] },
-      { name: "Schibsted Grotesk", provider: "google", weights: [400, 500, 600, 700], styles: ["normal"] },
-      { name: "JetBrains Mono", provider: "google", weights: [400, 500], styles: ["normal"] },
-    ],
+      { name: "Schibsted Grotesk", provider: "google", weights: [400, 500, 600, 700], styles: ["normal"] },    ],
   },
 });
