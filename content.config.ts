@@ -54,6 +54,20 @@ export default defineContentConfig({
             body: z.string(),
           }),
         ),
+        // Short "outside work" section between Skills and Contact.
+        interests: z.object({
+          heading: z.string(),
+          headingEmphasis: z.string(),
+          items: z.array(
+            z.object({
+              title: z.string(),
+              body: z.string(),
+              image: z.string(),
+              imageAlt: z.string(),
+              link: z.object({ label: z.string(), url: z.string().url() }),
+            }),
+          ),
+        }),
         contact: z.object({
           heading: z.string(),
           headingEmphasis: z.string(),

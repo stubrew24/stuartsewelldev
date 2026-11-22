@@ -65,6 +65,31 @@ skills:
       A year coaching bootcamp students at Flatiron School. Comfortable
       explaining technical decisions to developers and non-developers.
 
+interests:
+  heading: Away from
+  headingEmphasis: the screen
+  items:
+    - title: Pottery
+      body: >-
+        Wheel-thrown, functional pieces, mostly bowls and cups. Lately I've
+        been deep in glaze chemistry, mixing my own recipes one test tile at
+        a time.
+      image: /images/pottery.jpg
+      imageAlt: Three stacked stoneware bowls with pale blue-white glaze and a dark band around the foot
+      # Point this at the pottery site once it exists.
+      link:
+        label: "@stu.throws"
+        url: https://www.instagram.com/stu.throws/
+    - title: Photography
+      body: >-
+        Urban landscapes, often in black and white. I'm drawn to fog, wet
+        streets at night, concrete and power lines.
+      image: /images/photography.jpg
+      imageAlt: Electricity pylon fading into thick fog above a field of grazing sheep
+      link:
+        label: "@brewcat24"
+        url: https://www.instagram.com/brewcat24/
+
 contact:
   heading: Let's work
   headingEmphasis: together.

@@ -93,6 +93,7 @@ useHead({
         :roles="data.experience"
       />
       <SkillsSection :skills="data.site.skills" />
+      <InterestsSection :interests="data.site.interests" />
       <ContactSection :contact="data.site.contact" :email="data.site.email" :social="data.site.social">
         <template #footer>
           <SiteFooter :name="data.site.name" :social="data.site.social" />
